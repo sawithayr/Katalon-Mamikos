@@ -29,32 +29,11 @@ WebUI.waitForElementPresent(findTestObject('cariLokasi'), 3)
 
 WebUI.click(findTestObject('cariLokasi'))
 
-WebUI.setText(findTestObject('cariLokasi'), 'jalan kaliurang')
+WebUI.setText(findTestObject('cariLokasi'), 'gfuywgfbamjgdwakgekafgjhbwhja')
 
 WebUI.delay(5)
 
-WebUI.waitForElementPresent(findTestObject('lokasiJakal'), 5)
-
-WebUI.click(findTestObject('lokasiJakal'))
-
-WebUI.waitForElementPresent(findTestObject('hargaMin'), 3)
-
-WebUI.click(findTestObject('hargaMin'))
-
-WebUI.setText(findTestObject('hargaMin'), '1000000')
-
-WebUI.waitForElementPresent(findTestObject('hargaMax'), 3)
-
-WebUI.click(findTestObject('hargaMax'))
-
-not_run: WebUI.setText(findTestObject('hargaMax'), '2000000')
-
-WebUI.delay(3)
-
-WebUI.click(findTestObject('buttonSet'))
-
-WebUI.verifyTextPresent('kos-kosan di sekitar Jalan Kaliurang, Caturtunggal, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia', 
-    false)
+WebUI.verifyTextPresent('Tidak menemukan nama tempat / nama kost yang sesuai. Ubah kata kunci', false, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.closeBrowser()
 

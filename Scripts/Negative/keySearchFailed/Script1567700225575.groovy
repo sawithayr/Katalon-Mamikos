@@ -19,42 +19,35 @@ WebUI.maximizeWindow()
 
 WebUI.waitForPageLoad(30)
 
-WebUI.verifyElementClickable(findTestObject('fieldCari'))
-
-WebUI.click(findTestObject('fieldCari'))
-
-WebUI.delay(3)
-
-WebUI.waitForElementPresent(findTestObject('cariLokasi'), 3)
-
-WebUI.click(findTestObject('cariLokasi'))
-
-WebUI.setText(findTestObject('cariLokasi'), 'jalan kaliurang')
-
-WebUI.delay(5)
-
-WebUI.waitForElementPresent(findTestObject('lokasiJakal'), 5)
-
-WebUI.click(findTestObject('lokasiJakal'))
-
 WebUI.waitForElementPresent(findTestObject('hargaMin'), 3)
 
 WebUI.click(findTestObject('hargaMin'))
 
-WebUI.setText(findTestObject('hargaMin'), '1000000')
+WebUI.setText(findTestObject('hargaMin'), '15000000')
 
 WebUI.waitForElementPresent(findTestObject('hargaMax'), 3)
 
 WebUI.click(findTestObject('hargaMax'))
 
-not_run: WebUI.setText(findTestObject('hargaMax'), '2000000')
+not_run: WebUI.sendKeys(findTestObject('hargaMax'), Keys.chord(Keys.CONTROL, 'a'))
+
+not_run: WebUI.sendKeys(findTestObject('hargaMax'), Keys.chord(Keys.BACK_SPACE))
 
 WebUI.delay(3)
 
 WebUI.click(findTestObject('buttonSet'))
 
-WebUI.verifyTextPresent('kos-kosan di sekitar Jalan Kaliurang, Caturtunggal, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia', 
-    false)
+WebUI.delay(3)
+
+WebUI.verifyTextPresent('Ditemukan 0 kos-kosan di area sekitar saat ini', false)
 
 WebUI.closeBrowser()
+
+def ClearTextField(TestObject to) {
+    WebUI.sendKeys(to, Keys.chord(Keys.CONTROL, 'a'))
+
+    WebUI.sendKeys(to, Keys.chord(Keys.DELETE))
+
+    WebUI.setText(findTestObject('hargaMax'), '15000000')
+}
 

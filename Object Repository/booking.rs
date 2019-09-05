@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>CSS</key>
-         <value>#detailKostContainer .content-container #priceCard .price-card-container .card-footer .btn-item-box.box-secondary button</value>
+         <value>#detailKostContainer .content-container #priceCard .price-card-container .card-footer .btn-item-box.box-secondary button h2</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

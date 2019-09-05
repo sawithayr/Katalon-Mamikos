@@ -80,3 +80,5 @@ WebUI.click(findTestObject('booking'))
 
 WebUI.verifyTextPresent('Masuk', false)
 
+WebUI.closeBrowser()
+

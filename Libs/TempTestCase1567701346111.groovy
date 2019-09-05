@@ -14,7 +14,7 @@ DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.m
 DriverCleanerCollector.getInstance().addDriverCleaner(new com.kms.katalon.core.cucumber.keyword.internal.CucumberDriverCleaner())
 
 
-RunConfiguration.setExecutionSettingFile('C:\\Users\\NOTEBO~1\\AppData\\Local\\Temp\\Katalon\\Test Cases\\Positive\\cariKostJogjaProperty\\20190905_212238\\execution.properties')
+RunConfiguration.setExecutionSettingFile('C:\\Users\\NOTEBO~1\\AppData\\Local\\Temp\\Katalon\\Test Cases\\Negative\\keySearchFailed\\20190905_233546\\execution.properties')
 
 TestCaseMain.beforeStart()
 
@@ -40,64 +40,25 @@ not_run: WebUI.maximizeWindow()
 
 not_run: WebUI.waitForPageLoad(30)
 
-not_run: WebUI.verifyElementClickable(findTestObject('fieldCari'))
+WebUI.waitForElementPresent(findTestObject('hargaMin'), 3)
 
-not_run: WebUI.click(findTestObject('fieldCari'))
+WebUI.click(findTestObject('hargaMin'))
 
-not_run: WebUI.delay(3)
+WebUI.setText(findTestObject('hargaMin'), '15000000')
 
-not_run: WebUI.waitForElementPresent(findTestObject('cariLokasi'), 3)
+WebUI.waitForElementPresent(findTestObject('hargaMax'), 3)
 
-not_run: WebUI.click(findTestObject('cariLokasi'))
+WebUI.click(findTestObject('hargaMax'))
 
-not_run: WebUI.setText(findTestObject('cariLokasi'), 'jalan kaliurang')
+not_run: WebUI.sendKeys(findTestObject('hargaMax'), Keys.chord(Keys.CONTROL, 'a'))
 
-not_run: WebUI.delay(5)
+WebUI.sendKeys(findTestObject('hargaMax'), Keys.chord(Keys.BACK_SPACE))
 
-not_run: WebUI.waitForElementPresent(findTestObject('lokasiJakal'), 5)
+WebUI.setText(findTestObject('hargaMax'), '2000000')
 
-not_run: WebUI.click(findTestObject('lokasiJakal'))
+WebUI.delay(3)
 
-not_run: WebUI.waitForElementPresent(findTestObject('hargaMin'), 3)
+WebUI.click(findTestObject('buttonSet'))
 
-not_run: WebUI.click(findTestObject('hargaMin'))
-
-not_run: WebUI.setText(findTestObject('hargaMin'), '1000000')
-
-not_run: WebUI.waitForElementPresent(findTestObject('hargaMax'), 3)
-
-not_run: WebUI.click(findTestObject('hargaMax'))
-
-not_run: WebUI.setText(findTestObject('hargaMax'), '2000000')
-
-not_run: WebUI.delay(3)
-
-not_run: WebUI.click(findTestObject('buttonSet'))
-
-not_run: WebUI.verifyTextPresent('kos-kosan di sekitar Jalan Kaliurang, Caturtunggal, Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia', 
-    false)
-
-not_run: WebUI.delay(3)
-
-not_run: WebUI.waitForElementClickable(findTestObject('buttonBisaBooking'), 3)
-
-not_run: WebUI.click(findTestObject('buttonBisaBooking'))
-
-not_run: WebUI.delay(5)
-
-WebUI.verifyTextPresent('Ditemukan 43 kos-kosan di sekitar Jalan Kaliurang', false)
-
-WebUI.click(findTestObject('filterLanjutan'))
-
-WebUI.waitForElementPresent(findTestObject('bookingKamar1'), 3)
-
-WebUI.click(findTestObject('bookingKamar1'))
-
-WebUI.waitForPageLoad(30)
-
-WebUI.waitForElementPresent(findTestObject('booking'), 3)
-
-WebUI.click(findTestObject('booking'))
-
-''', 'Test Cases/Positive/cariKostJogjaProperty', new TestCaseBinding('Test Cases/Positive/cariKostJogjaProperty',[:]), FailureHandling.STOP_ON_FAILURE , false)
+''', 'Test Cases/Negative/keySearchFailed', new TestCaseBinding('Test Cases/Negative/keySearchFailed',[:]), FailureHandling.STOP_ON_FAILURE , false)
     
